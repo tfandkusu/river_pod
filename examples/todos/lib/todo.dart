@@ -27,6 +27,7 @@ class TodoList extends StateNotifier<List<Todo>> {
   TodoList([List<Todo> initialTodos]) : super(initialTodos ?? []);
 
   void add(String description) {
+    // stateへの代入が状態の更新となる
     state = [
       ...state,
       Todo(description: description),
@@ -62,6 +63,7 @@ class TodoList extends StateNotifier<List<Todo>> {
   }
 
   void remove(Todo target) {
+    // 削除の時もstateを更新
     state = state.where((todo) => todo.id != target.id).toList();
   }
 }
