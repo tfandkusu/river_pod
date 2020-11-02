@@ -243,6 +243,8 @@ class Title extends StatelessWidget {
 ///
 /// This ensures that when we add/remove/edit todos, only what the
 /// impacted widgets rebuilds, instead of the entire list of items.
+/// 編集があったWidgetだけを再構築したい。
+/// おそらく状態の一部分を切り出せるProvider
 final _currentTodo = ScopedProvider<Todo>(null);
 
 class TodoItem extends HookWidget {
